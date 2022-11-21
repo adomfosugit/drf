@@ -40,12 +40,14 @@ INSTALLED_APPS = [
     'page',
     'page_api',
     'rest_framework',
+    "corsheaders",
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,13 +125,13 @@ STATIC_URL = 'static/'
 
 
 # Add permissions
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES' : [
-        'rest_framework.permissions.AllowAny ' ,
+#REST_FRAMEWORK = {
+ #   'DEFAULT_PERMISSION_CLASSES' : [
+  #     'rest_framework.permissions.AllowAny ' ,
 
-    ]
+   # ]
 
-}
+#}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
